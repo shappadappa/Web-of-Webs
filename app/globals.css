@@ -8,3 +8,9 @@ main{
 h1{
     @apply text-5xl font-bold;
 }
+form label{
+    @apply block tracking-wider;
+}
+form input:not([type="submit"]){
+    @apply block mt-1 p-1 rounded-md focus-within:outline-none focus-within:shadow-[0.35rem_0.35rem_0_rgba(0,0,0,0.1)] transition-shadow;
+}
