@@ -2,8 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+nav ul li a, 
+nav ul li button{
+    @apply block w-full bg-slate-200 p-2 rounded relative transition-shadow hover:shadow-[0.35rem_0.35rem_0_rgba(0,0,0,0.05)];
+}
 main{
-    @apply max-w-6xl mx-auto my-8 p-4;
+    @apply max-md:col-span-5 col-span-4 max-w-6xl mx-auto my-8 p-4;
 }
 h1{
     @apply text-5xl font-bold;

@@ -1,8 +1,9 @@
 import './globals.css'
-import { Manrope } from 'next/font/google'
+import { Hubot_Sans } from 'next/font/google'
 import paths from "./paths.json"
+import Navbar from './components/Navbar'
 
-const manrope = Manrope({ subsets: ['latin'] })
+const hubotSans = Hubot_Sans({ subsets: ['latin'] })
 
 export const metadata = {
 	title: 'Web of Webs',
@@ -66,7 +67,7 @@ export default function RootLayout({children}: {children: React.ReactNode}){
 
     return (
         <html lang="en">
-        	<body className={`min-h-full w-full bg-cover bg-no-repeat text-center ${manrope.className}`}>
+        	<body className={`min-h-full w-full bg-cover bg-no-repeat text-center ${hubotSans.className}`}>
                 <svg className="fixed top-0 left-0 min-w-full min-h-full -z-10 object-cover" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
                     <g strokeWidth="1.5" strokeLinejoin="bevel">
                         {paths.map((path, index) =>(
@@ -74,7 +75,11 @@ export default function RootLayout({children}: {children: React.ReactNode}){
                         ))}
                     </g>
                 </svg>
-                {children}
+
+                <div className="grid grid-cols-5">
+                    <Navbar />
+                    {children}
+                </div>
             </body>
         </html>
     )
